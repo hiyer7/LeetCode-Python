@@ -1,0 +1,51 @@
+num = [-1,0,1,2,-1,-4]
+#num = [0,0,0]
+#num = [-2,0,1,1,2]
+num = [2,-3,0,-2,-5,-5,-4,1,2,-2,2,0,2,-4,5,5,-10]
+num.sort()
+
+first = 0
+second = 1
+print(num)
+i=len(num)-1
+result = []
+while i>second:
+  #print(first, second, i)
+  if num[first]+num[second] + num[i] < 0:
+    first = first+1
+    second = second+1
+  elif num[first]+num[second] + num[i] > 0:
+     i=i-1
+  elif num[first]+num[second] + num[i] == 0:
+    result.append([num[first],num[second],num[i]])
+    #print(f"Found {num[first],num[second],num[i]}")
+    first = first+1
+    second = second+1
+    i=i-1
+
+last = len(num)-1
+second_last = last-1
+i=0
+while i<second_last:
+  print(last, second_last, i)
+  if num[last]+num[second_last] + num[i] > 0:
+    last = last-1
+    second_last = second_last-1
+  elif num[last]+num[second_last] + num[i] < 0:
+     i=i+1
+  elif num[last]+num[second_last] + num[i] == 0:
+    result_part = [num[last],num[second_last],num[i]]
+    result_part.sort()
+    if result_part not in result:
+      result.append(result_part)
+    #print(f"Found {num[first],num[second],num[i]}")
+    last = last-1
+    second_last = second_last-1
+    i=i+1
+first = 0
+last = len(nums)-1
+i = first+1   
+while i < last:
+
+#list(set(result))
+print(result)
