@@ -1,0 +1,12 @@
+from collections import defaultdict
+
+anagram_mapper = defaultdict(list)
+
+for str in strs:
+  result = [0]*26
+  for s in str:
+    result[ord(s)-ord('a')] +=1
+
+  anagram_mapper[tuple(result)].append(str)
+
+print(list(anagram_mapper.values())
