@@ -1,9 +1,9 @@
 min_result = max_result = result = num[0]
 
 for num in nums[1:]:
-  temp_max = max_result
-  max_result = max(num, temp_max*num, min_result*num)
-  min_result = min(num, temp_max*num, min_result*num)
+  curr_max = max_result
+  max_result = max(num, curr_max*num, min_result*num)
+  min_result = min(num, curr_max*num, min_result*num)
 
   result = max(result, max_result)
 
