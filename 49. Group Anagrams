@@ -1,11 +1,15 @@
-from collections import defaultdict
-merged_anagram = defaultdict(list)
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        from collections import defaultdict
 
-for str in strs:
-  count = [0]*26
-  for s in str:
-    count[ord(s) - ord('a')] +=1
+        merged = defaultdict(list)
 
-  merged_anagram[tuple(count)].append(str)
+        for str in strs:
+            count = [0]*26
+            for s in str:
+                count[ord(s)-ord('a')] +=1
+            
+            merged[tuple(count)].append(str)
 
-print(list(merged_anagram.values()))
+        return list(merged.values())
+        
