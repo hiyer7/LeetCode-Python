@@ -1,10 +1,10 @@
-min_result = max_result = result = num[0]
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        min_result = max_result= result = nums[0]
+        for num in nums[1:]:
+            curr_max = max_result
+            max_result = max(num, curr_max*num, min_result*num)
+            min_result = min(num, curr_max*num, min_result*num)
 
-for num in nums[1:]:
-  curr_max = max_result
-  max_result = max(num, curr_max*num, min_result*num)
-  min_result = min(num, curr_max*num, min_result*num)
-
-  result = max(result, max_result)
-
-print(result)
+            result = max(result, max_result)
+        return result
