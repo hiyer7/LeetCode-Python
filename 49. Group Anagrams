@@ -2,14 +2,12 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         from collections import defaultdict
 
-        merged = defaultdict(list)
+        grouped_anagram = defaultdict(list)
 
         for str in strs:
             count = [0]*26
             for s in str:
-                count[ord(s)-ord('a')] +=1
+                count[ord(s) - ord('a')] += 1
             
-            merged[tuple(count)].append(str)
-
-        return list(merged.values())
-        
+            grouped_anagram[tuple(count)].append(str)
+        return list(grouped_anagram.values())
