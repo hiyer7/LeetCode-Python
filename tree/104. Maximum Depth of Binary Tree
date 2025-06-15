@@ -1,0 +1,6 @@
+def maxDepth(root):
+  if not root:
+    return 0
+  hl = maxDepth(root.left)
+  hr = maxDepth(root.right)
+  return max(hl, hr) +1
