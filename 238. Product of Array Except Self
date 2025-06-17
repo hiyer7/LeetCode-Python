@@ -1,13 +1,14 @@
-prefix = suffix = 1
-n = len(nums)
-result = [1]*n
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+
+prefix= suffix= 1
+len(nums)= n
+result= [1]*n
 
 for i in range(n):
-  result[i] = prefix*result[i]
-  prefix = prefix*nums[i]
+  result[i]= result[i]*prefix
+  prefix= prefix*nums[i]
 
-for i in range(n-1,-1,-1):
-  result[i] = result[i] * suffix
-  suffix = suffix * nums[i]
-
-print(result)
+for i in range(n-1, -1, -1):
+  result[i]= result[i]*suffix
+  suffix= suffix*nums[i]
