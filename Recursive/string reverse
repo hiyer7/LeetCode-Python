@@ -1,4 +1,4 @@
 def reverse(string):
-    if string is none:
-        return ''
-    return reverse(string[-1]) + string[0]
+    if not string:
+        return None
+    return reverse(string[1:]) + string[0]
