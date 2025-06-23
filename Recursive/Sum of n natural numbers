@@ -1,4 +1,4 @@
 def sumOfN(number):
-  if not n:
-    return 0
-  return n + sumOfN(n-1)
+  if not number:
+      return None
+  return number+ sumOfN(number -1)
