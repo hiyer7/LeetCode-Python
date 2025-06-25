@@ -3,4 +3,4 @@ import heapq
 
 count= Counter(nums)
 
-print (heapq.nlargest(k, count.keys(), key= count.get))
+return heapq.nlargest(k, count.keys(), key= count.get)
